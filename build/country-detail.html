@@ -1,0 +1,16 @@
+
+<div class="detail-wrap">
+  <h2>{{ country.countryName}}</h2>
+  <dl>
+    <dt>Population of Country</dt>
+    <dd>{{ country.population | number}}</dd>
+    <dt>Area</dt>
+    <dd>{{ country.areaInSqKm | number }} sqaure km</dd>
+    <dt>Capital</dt>
+    <dd>{{ country.capital }}</dd>
+    <dt>Population of Capital</dt>
+    <dd>{{ capital.population }}</dd>
+    <dt>3 neighbors:</dt>
+    <dd>Blah, blah, blah</dd>
+  </dl><img ng-src="country.jpg" alt="Country Image"/><img ng-src="flag.jpg" alt="Country Flag"/>
+</div><a href="" ui-sref="home" class="btn">Home</a><a href="" ui-sref="countries" class="btn">Browse Countries</a>

@@ -1,4 +1,5 @@
-angular.module('App', ['ui.router'])
+angular
+  .module('App', ['ui.router'])
 
   .config(function($stateProvider, $urlRouterProvider){
     $urlRouterProvider.otherwise('/home');
@@ -13,25 +14,44 @@ angular.module('App', ['ui.router'])
         url: '/countries',
         templateUrl: 'countries.html',
         controller: 'countryCtrl'
+      })
+
+      .state('countries.country', {
+        url: '/countries/:countryName',
+        templateUrl: 'country-detail.html',
+        controller: 'countryCtrl'
       });
 
   })
 
   .factory('countryRequest', function($http){
-      var countryData = [];
+    return {
+      getData: function(){
+        return $http.get('http://api.geonames.org/countryInfoJSON?username=cyborgspider', {cache:true})
 
-      $http.get('http://api.geonames.org/countryInfoJSON?username=cyborgspider', {cache:true})
+        // .then(function(result){
+        //   return result.data.geonames;
+        // });
 
         .success(function(data){
-          countryData = data.geonames;
-          return countryData;
-        })
-
-        .error(function(){
-          return console.log('Error retrieving data');
+          return data;
         });
+      }
+    };
   })
 
   .controller('countryCtrl', function($scope, countryRequest){
-    $scope.countryData = countryRequest;
+    countryRequest.getData()
+
+      // .then(function(data){
+      //   $scope.countryData = data;
+      // });
+
+      .success(function(data){
+        $scope.countryData = data.geonames;
+      });
+
+    $scope.loadDetailPage = function(country){
+      console.log(country);
+    };
   });

@@ -1,0 +1,23 @@
+.detail-wrap
+  h2 {{ country.countryName}}
+  dl
+    dt Population of Country
+    dd {{ country.population | number}}
+
+    dt Area
+    dd {{ country.areaInSqKm | number }} sqaure km
+
+    dt Capital
+    dd {{ country.capital }}
+
+    dt Population of Capital
+    dd {{ capital.population }}
+
+    dt 3 neighbors:
+    dd Blah, blah, blah
+
+  img(ng-src="country.jpg", alt="Country Image")
+  img(ng-src="flag.jpg", alt="Country Flag")
+
+a(href="", ui-sref="home").btn Home
+a(href="", ui-sref="countries").btn Browse Countries

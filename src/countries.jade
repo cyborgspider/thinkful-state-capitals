@@ -9,7 +9,7 @@
         th Population
         th Continent
     tbody
-      tr(ng-repeat="country in countryData")
+      tr(ng-repeat="country in countryData", ng-click="loadDetailPage(country.countryName)")
         td {{ country.countryName }}
         td {{ country.countryCode }}
         td {{ country.capital }}
