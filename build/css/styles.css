@@ -1,0 +1,7 @@
+body{font:16px/1.5 "Helvetica","Arial",sans-serif;text-align:center}
+.table-wrap{max-height:600px;overflow-y:scroll;border:solid 1px #eaedf1;width:60%;margin:0 auto}
+table{background:#fff;border-collapse:collapse;text-align:left}
+thead tr,tfoot tr{background:#fff;color:#707a8b;font-weight:bold;height:48px;padding:0}
+tr{color:#788292;height:32px;line-height:1.125rem}
+tbody tr:nth-child(odd){background:#f3f3f3}
+th,td{border-left:1px solid #eaedf1;padding:0 1.5rem 0 .75rem;position:relative}

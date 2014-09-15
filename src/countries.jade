@@ -1,0 +1,20 @@
+.table-wrap
+  table
+    thead
+      tr
+        th Name
+        th Country Code
+        th Capital
+        th Area in km2
+        th Population
+        th Continent
+    tbody
+      tr(ng-repeat="country in countryData")
+        td {{ country.countryName }}
+        td {{ country.countryCode }}
+        td {{ country.capital }}
+        td {{ country.areaInSqKm | number }}
+        td {{ country.population | number }}
+        td {{ country.continent }}
+
+a(href="", ui-sref="home").btn Home
